@@ -85,6 +85,7 @@ window.onload = function() {
 };
 </script></head><body>
 <div>Em's Crash Course on... <em>Web Maps</em></div>
+<div><img src="images/leaflet_code.png"> This is not a map</div>
 <div>Today we will be talking about the <em>very most basic principles</em> of web mapping.</div>
 <div>We'll talk a lot about <em>Google</em>, but I want to show you a <em>100% open source</em> stack for your mapping needs</div>
 <div>First, let's start with <em>anatomy</em></div>
@@ -94,8 +95,9 @@ window.onload = function() {
 <div><img src="images/0-anatomy-dude/anatomy3.png"></div>
 <div><img src="images/0-anatomy-dude/anatomy4.png"></div>
 <div>Instead of cells, maps have <em>data.</em></div>
-<div>Instead of circulatory and digestive systems, web maps have <em>styles and data and tiles and servers.</em></div>
+<div>Instead of circulatory and digestive systems, web maps have <em>styles, tiles, content, and servers.</em></div>
 <div>... or something like that, I didn't take A & P</div>
+<div><img src="images/anatomy-of-a-web-map.png"></div>
 <div>What is a web map? We've all seen them... </div>
 <div><img src="images/google-map.png"><a href="https://www.google.com/maps/preview">maps.google.com</a></div>
 <div><img src="images/osm.png"><a href="http://www.openstreetmap.org/">OpenStreetMap.org</a></div>
@@ -121,22 +123,18 @@ window.onload = function() {
 <div><img src="images/tiles/zoom13.png"><em>Zoom level 13</em></div>
 <div>Tiles are <em>rendered</em> in advance (usually) then stored in a cache</div>
 <div>you can link to them individually: <a href="http://tile.openstreetmap.org/4/2/6.png">http://tile.openstreetmap.org/4/2/6.png</a></div>
+<div><img src="images/leaflet_code.png"></div>
 <div>http://<em>tile.openstreetmap.org</em>/4/2/6.png -- this is the name of the tile server.</div>
 <div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the z value, or the zoom level.</div>
 <div>http://tile.openstreetmap.org/4/<em>2/6</em>.png -- This is the x/y value, or the place in the grid where the tile lives.</div>
+<div><img src="images/anatomy-of-a-web-map.png"></div>
 <div>When we layer things like markers on top of them, we call those <em>data layers</em> or <em>content layers</em> or <em>feature layers</em>.</div>
 <div>Sometimes you can interact with them (clicking to produce a popup, for example).</div>
-<div>Popular data filetypes: shapefiles, KML, or more recently,<em>GeoJSON</em> and <em>TopoJSON</em></div>
-<div>#protip, ogr2ogr can convert between types</div>
-<div>don't ask me how...it's a mystery!</div>
-<div>Here's the breakdown of how these pieces fit together:</div>
 <div><img src="images/basemap-datalayers-01.png"></div>
-<div><img src="images/basemap-datalayers-02.png"></div>
 <div><img src="images/basemap-datalayers-03.png"></div>
-<div><img src="images/basemap-datalayers-04.png"></div>
 <div><img src="images/basemap-datalayers-05.png"></div>
+<div>Filetypes: GIS uses <em>shapefiles</em>, but web maps prefer KML, or more recently, <em>topoJSON</em> & <em>geoJSON</em></div>
 <div><img src="images/leaflet_code.png"></div>
-<div><img src="images/anatomy-of-a-web-map.png"></div>
 <div>What does the javascript library do? Grabs the tiles, adds content layer, handles interaction.</div>
 <div>javascript: a good place to start is <a href="http://leafletjs.com">Leaflet</a>, although there are others: <a href="http://openlayers.org">OpenLayers</a> / <a href="http://modestmaps.com">Modest Maps</a> / <a href="http://polymaps.org">Polymaps</a>, turf.js, cartodb.js..</div>
 <div><a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a> / <a href="http://www.microsoft.com/maps/choose-your-bing-maps-API.aspx">Bing Maps API</a> / <a href="http://developer.here.com/web/guest/javascript-apis">Nokia HERE Maps API</a> / <a href="https://developers.arcgis.com/en/javascript/">ESRI ArcGIS API</a></div>
@@ -154,15 +152,24 @@ window.onload = function() {
 <div>Do I need to make my own custom tiles?</div>
 <div>No? Use these! <a href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a href="http://cloudmade.com/products/map-tiles">CloudMade</a>, <a href="http://maps.stamen.com">Stamen</a>, <a href="https://www.mapbox.com/tour/#maps">MapBox</a>, <a href="http://developer.mapquest.com/web/products/open/map">MapQuest</a></div>
 <div>Yes? Use <a href="https://www.mapbox.com/tilemill/">TileMill</a> to design your own tiles.</div>
-<div><img src=""><a href="https://api.tiles.mapbox.com/v4/katiekowalsky.236692c1/page.html?access_token=pk.eyJ1Ijoia2F0aWVrb3dhbHNreSIsImEiOiJHR2hfdlBNIn0.GUMLsSnT-SYx4ew7b77kqw#15/38.8837/-77.0062">Rad!</a></div>
+<div><img src="images/kkowalski-lichstenstein-tiles.png"><a href="https://api.tiles.mapbox.com/v4/katiekowalsky.236692c1/page.html?access_token=pk.eyJ1Ijoia2F0aWVrb3dhbHNreSIsImEiOiJHR2hfdlBNIn0.GUMLsSnT-SYx4ew7b77kqw#15/38.8837/-77.0062">Rad!</a></div>
 <div><img src="images/worldwide-wood.png"> <em>Pretty!</em></div>
 <div>Style your map with <a href="https://www.mapbox.com/carto">CartoCSS</a> (or just carto)</div>
-<div><img src=""></div>
-<div>Serve the tiles somewhere <em>MapBox</em> or run your own tile server. For example: <a href="https://github.com/klokantech/tileserver-php/">TileServer.php</a> / <a href="http://tilestache.org">TileStache</a> / <a href="http://tilecache.org">TileCache</a> / <a href="https://github.com/mapbox/tilestream">TileStream</a> / <a href="https://github.com/chelm/mbtiles-server">mbtiles-server</a> / <a href=http://wiki.openstreetmap.org/wiki/Mod_tile">mod_tile</a></div>
+<div><img src="images/cartocss8.png"></div>
+<div>Serve the tiles somewhere <em>MapBox</em> or run your own tile server. For example: <a href="https://github.com/klokantech/tileserver-php/">TileServer.php</a> / <a href="http://tilestache.org">TileStache</a> / <a href="http://tilecache.org">TileCache</a> / <a href="https://github.com/mapbox/tilestream">TileStream</a> / <a href="https://github.com/chelm/mbtiles-server">mbtiles-server</a> / <a href="http://wiki.openstreetmap.org/wiki/Mod_tile">mod_tile</a></div>
 <div>Do I need a content layer?</div>
 <div>No? Put all your data into the tiles, possibly using UTFGrid for interactivity</div>
-<div>Yes? Convert a Shapefile to GeoJSON with <a href="http://ogre.adc4gis.com/">OGRE</a> or write your own GeoJSON with <a href="http://geojson.io">geojson.io</a></div>
+<div>Yes? Grab data from open portals or api's. Convert between file types <a href="http://ogre.adc4gis.com/">OGRE</a></div>
+<div>or write your own GeoJSON with <a href="http://geojson.io">geojson.io</a></div>
+<div><img src="images/geojson-io-screen.png"/></div>
+<div>Not good with color theory or data vis? Grab a palette from ColorBrewer</div>
+<div><img src="images/colorbrewerscreen.png"</div>
 <div>Finally, <a href="http://cartodb.com">CartoDB</a> takes care of almost all of this for you! It's kinda a one-stop shop to explore</div>
+<div><img src="images/cartoDBscreen.png"/></div>
+<div>Color wizards, timelapse, SQL/PostgreSQL/PostGIS, hosting, export widgets, basemaps</div>
+<div>So next time a project needs a map, you know where to start!</div>
+<div><img src="images/anatomy-of-a-web-map.png"></div>
+
 
 <div>Thanks to:</div>
 <div>Everyone at <a href="http://maptime.github.io">#maptime</a></div>
