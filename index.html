@@ -128,6 +128,16 @@ window.onload = function() {
 <div>http://<em>tile.openstreetmap.org</em>/4/2/6.png -- this is the name of the tile server.</div>
 <div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the z value, or the zoom level.</div>
 <div>http://tile.openstreetmap.org/4/<em>2/6</em>.png -- This is the x/y value, or the place in the grid where the tile lives.</div>
+<div>Exception: <a href="http://d3js.org">D3</a> exists outside the world of tiles</div>
+<div>you can’t easily make road map in D3 <em>BUT</em> can do things that are clumsy in slippy maps like...</div>
+<div style="color: black"><img src="images/d3-examples/d3_choropleth.png">choropleth maps or... </div>
+<div style="color: black"><img src="images/d3-examples/d3_cartogram.png">cartograms or... </div>
+<div style="color: black"><img src="images/d3-examples/projection_transitions2.png">different map projections (in the browser!)</div>
+<div style="color: black"><img src="images/d3-examples/geo.png">D3</div>
+<div style="color: black"><img src="images/d3-examples/racial-divide.png">IS</div>
+<div style="color: black"><img src="images/d3-examples/topojson.png">IN</div>
+<div style="color: black"><img src="images/d3-examples/drought.png">SANE</div>
+<div> Back to tile-based web maps...</div>
 <div><img src="images/anatomy-of-a-web-map.png"></div>
 <div>When we layer things like markers on top of them, we call those <em>data layers</em> or <em>content layers</em> or <em>feature layers</em>.</div>
 <div>Sometimes you can interact with them (clicking to produce a popup, for example).</div>
@@ -139,16 +149,6 @@ window.onload = function() {
 <div>What does the javascript library do? Grabs the tiles, adds content layer, handles interaction.</div>
 <div>javascript: a good place to start is <a href="http://leafletjs.com">Leaflet</a>, although there are others: <a href="http://openlayers.org">OpenLayers</a> / <a href="http://modestmaps.com">Modest Maps</a> / <a href="http://polymaps.org">Polymaps</a>, turf.js, cartodb.js..</div>
 <div><a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a> / <a href="http://www.microsoft.com/maps/choose-your-bing-maps-API.aspx">Bing Maps API</a> / <a href="http://developer.here.com/web/guest/javascript-apis">Nokia HERE Maps API</a> / <a href="https://developers.arcgis.com/en/javascript/">ESRI ArcGIS API</a></div>
-<div>Exception: <a href="http://d3js.org">D3</a> exists outside the world of tiles</div>
-<div>you can’t easily make road map in D3 <em>BUT</em> can do things that are clumsy in slippy maps like...</div>
-<div style="color: black"><img src="images/d3-examples/d3_choropleth.png">choropleth maps or... </div>
-<div style="color: black"><img src="images/d3-examples/d3_cartogram.png">cartograms or... </div>
-<div style="color: black"><img src="images/d3-examples/projection_transitions2.png">different map projections (in the browser!)</div>
-<div style="color: black"><img src="images/d3-examples/geo.png">D3</div>
-<div style="color: black"><img src="images/d3-examples/racial-divide.png">IS</div>
-<div style="color: black"><img src="images/d3-examples/topojson.png">IN</div>
-<div style="color: black"><img src="images/d3-examples/drought.png">SANE</div>
-<div> Back to tile-based web maps...</div>
 <div>So.<br>Where do I start?</div>
 <div>Do I need to make my own custom tiles?</div>
 <div>No? Use these! <a href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a href="http://cloudmade.com/products/map-tiles">CloudMade</a>, <a href="http://maps.stamen.com">Stamen</a>, <a href="https://www.mapbox.com/tour/#maps">MapBox</a>, <a href="http://developer.mapquest.com/web/products/open/map">MapQuest</a></div>
